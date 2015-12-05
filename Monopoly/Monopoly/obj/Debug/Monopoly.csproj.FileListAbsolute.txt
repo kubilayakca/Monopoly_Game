@@ -17,3 +17,6 @@ C:\Users\Kubilay\Desktop\CET 301\Monopoly\Monopoly\obj\Debug\Monopoly.fm_waiting
 C:\Users\Kubilay\Desktop\CET 301\Monopoly\Monopoly\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Kubilay\Desktop\CET 301\Monopoly\Monopoly\obj\Debug\Monopoly.fm_kartCek.resources
 C:\Users\Kubilay\Desktop\CET 301\Monopoly\Monopoly\obj\Debug\Monopoly.frm_zar.resources
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\Monopoly\Monopoly\bin\Debug\Monopoly.exe.config
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\Monopoly\Monopoly\obj\Debug\Monopoly.exe
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\Monopoly\Monopoly\obj\Debug\Monopoly.pdb

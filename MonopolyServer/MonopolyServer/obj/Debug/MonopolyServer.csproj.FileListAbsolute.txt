@@ -13,3 +13,16 @@ C:\Users\Kubilay\Desktop\CET 301\MonopolyServer\MonopolyServer\bin\Debug\EntityF
 C:\Users\Kubilay\Desktop\CET 301\MonopolyServer\MonopolyServer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Kubilay\Desktop\CET 301\MonopolyServer\MonopolyServer\bin\Debug\EntityFramework.xml
 C:\Users\Kubilay\Desktop\CET 301\MonopolyServer\MonopolyServer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\bin\Debug\MonopolyServer.exe.config
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\obj\Debug\MonopolyServer.exe
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\obj\Debug\MonopolyServer.pdb
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\bin\Debug\MonopolyServer.exe
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\bin\Debug\MonopolyServer.pdb
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\bin\Debug\EntityFramework.dll
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\bin\Debug\EntityFramework.xml
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\obj\Debug\MonopolyServer.csprojResolveAssemblyReference.cache
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\obj\Debug\MonopolyServer.Form1.resources
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\obj\Debug\MonopolyServer.Properties.Resources.resources
+C:\Users\Kubilay Akca\Desktop\MONOPOLY Game\MonopolyServer\MonopolyServer\obj\Debug\MonopolyServer.csproj.GenerateResource.Cache
