@@ -6,3 +6,6 @@ Firstly, you need to start the server, then clients should connect to server.
 
 
 Gameplay video : https://www.youtube.com/watch?v=zxAXItK-tfs
+
+
+![alt tag](https://github.com/kubilayakca/Monopoly_Game/blob/master/sc1.JPG)
