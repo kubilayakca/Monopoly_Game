@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MonopolyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="KamuFonuKartlari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="metin" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="tutar" Type="int" />
+    <Property Name="mr_monopoly_id" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="KartTipleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kart_tipi" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KayitliOyun">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="oyuncu_sayisi" Type="int" Nullable="false" />
+    <Property Name="tarih" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KayitliOyunDetay">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="kayitliOyunID" Type="int" Nullable="false" />
+    <Property Name="oyuncuID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="oyuncuPara" Type="int" Nullable="false" />
+    <Property Name="hapisahenedeMi" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="ciftZarAtmaSayisi" Type="int" Nullable="false" />
+    <Property Name="hapishaneTurSayisi" Type="int" Nullable="false" />
+    <Property Name="oyundakiKareYeri" Type="int" Nullable="false" />
+    <Property Name="oyundanCekilme" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="piyon" Type="int" Nullable="false" />
+    <Property Name="renk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="kodestenCikKartiSayisi" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OyunAlani">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tapu_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Monopoly.dbo.OyunKurallari' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="OyunKurallari">
+    <Key>
+      <PropertyRef Name="initial_money" />
+      <PropertyRef Name="initial_num_tapu" />
+    </Key>
+    <Property Name="initial_money" Type="int" Nullable="false" />
+    <Property Name="initial_num_tapu" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Piyonlar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="isim" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SansKartlari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="metin" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="tutar" Type="int" />
+    <Property Name="mr_monopoly_id" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TapularinSahipleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tapu_id" Type="int" Nullable="false" />
+    <Property Name="oyuncu_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="evSayisi" Type="int" Nullable="false" />
+    <Property Name="ipotekliMi" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TapuSenetleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tapu_ismi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fiyati" Type="int" />
+    <Property Name="arsa_kira" Type="int" />
+    <Property Name="ev1" Type="int" />
+    <Property Name="ev2" Type="int" />
+    <Property Name="ev3" Type="int" />
+    <Property Name="ev4" Type="int" />
+    <Property Name="otel_kira" Type="int" />
+    <Property Name="ev_maliyeti" Type="int" />
+    <Property Name="grup_sayisi" Type="int" />
+    <Property Name="renk" Type="nvarchar" MaxLength="50" />
+    <Property Name="kartTipi" Type="int" />
+  </EntityType>
+  <Association Name="FK_KartTipleri_TapuSenetleri">
+    <End Role="TapuSenetleri" Type="Self.TapuSenetleri" Multiplicity="1" />
+    <End Role="KartTipleri" Type="Self.KartTipleri" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TapuSenetleri">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="KartTipleri">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KayitliOyunDetay_KayitliOyun">
+    <End Role="KayitliOyun" Type="Self.KayitliOyun" Multiplicity="1" />
+    <End Role="KayitliOyunDetay" Type="Self.KayitliOyunDetay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KayitliOyun">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="KayitliOyunDetay">
+        <PropertyRef Name="kayitliOyunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OyunAlani_TapuSenetleri">
+    <End Role="TapuSenetleri" Type="Self.TapuSenetleri" Multiplicity="1" />
+    <End Role="OyunAlani" Type="Self.OyunAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TapuSenetleri">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OyunAlani">
+        <PropertyRef Name="tapu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TapularinSahipleri_TapuSenetleri">
+    <End Role="TapuSenetleri" Type="Self.TapuSenetleri" Multiplicity="1" />
+    <End Role="TapularinSahipleri" Type="Self.TapularinSahipleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TapuSenetleri">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TapularinSahipleri">
+        <PropertyRef Name="tapu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MonopolyModelStoreContainer">
+    <EntitySet Name="KamuFonuKartlari" EntityType="Self.KamuFonuKartlari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KartTipleri" EntityType="Self.KartTipleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KayitliOyun" EntityType="Self.KayitliOyun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KayitliOyunDetay" EntityType="Self.KayitliOyunDetay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OyunAlani" EntityType="Self.OyunAlani" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Piyonlar" EntityType="Self.Piyonlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SansKartlari" EntityType="Self.SansKartlari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TapularinSahipleri" EntityType="Self.TapularinSahipleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TapuSenetleri" EntityType="Self.TapuSenetleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OyunKurallari" EntityType="Self.OyunKurallari" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OyunKurallari].[initial_money] AS [initial_money], 
+    [OyunKurallari].[initial_num_tapu] AS [initial_num_tapu]
+    FROM [dbo].[OyunKurallari] AS [OyunKurallari]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_KartTipleri_TapuSenetleri" Association="Self.FK_KartTipleri_TapuSenetleri">
+      <End Role="TapuSenetleri" EntitySet="TapuSenetleri" />
+      <End Role="KartTipleri" EntitySet="KartTipleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KayitliOyunDetay_KayitliOyun" Association="Self.FK_KayitliOyunDetay_KayitliOyun">
+      <End Role="KayitliOyun" EntitySet="KayitliOyun" />
+      <End Role="KayitliOyunDetay" EntitySet="KayitliOyunDetay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OyunAlani_TapuSenetleri" Association="Self.FK_OyunAlani_TapuSenetleri">
+      <End Role="TapuSenetleri" EntitySet="TapuSenetleri" />
+      <End Role="OyunAlani" EntitySet="OyunAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TapularinSahipleri_TapuSenetleri" Association="Self.FK_TapularinSahipleri_TapuSenetleri">
+      <End Role="TapuSenetleri" EntitySet="TapuSenetleri" />
+      <End Role="TapularinSahipleri" EntitySet="TapularinSahipleri" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

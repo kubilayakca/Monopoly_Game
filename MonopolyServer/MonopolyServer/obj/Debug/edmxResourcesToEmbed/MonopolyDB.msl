@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MonopolyModelStoreContainer" CdmEntityContainer="MonopolyEntities10">
+    <EntitySetMapping Name="KamuFonuKartlari">
+      <EntityTypeMapping TypeName="MonopolyModel.KamuFonuKartlari">
+        <MappingFragment StoreEntitySet="KamuFonuKartlari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="metin" ColumnName="metin" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="mr_monopoly_id" ColumnName="mr_monopoly_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KartTipleri">
+      <EntityTypeMapping TypeName="MonopolyModel.KartTipleri">
+        <MappingFragment StoreEntitySet="KartTipleri">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kart_tipi" ColumnName="kart_tipi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KayitliOyun">
+      <EntityTypeMapping TypeName="MonopolyModel.KayitliOyun">
+        <MappingFragment StoreEntitySet="KayitliOyun">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="oyuncu_sayisi" ColumnName="oyuncu_sayisi" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KayitliOyunDetay">
+      <EntityTypeMapping TypeName="MonopolyModel.KayitliOyunDetay">
+        <MappingFragment StoreEntitySet="KayitliOyunDetay">
+          <ScalarProperty Name="kayitliOyunID" ColumnName="kayitliOyunID" />
+          <ScalarProperty Name="oyuncuID" ColumnName="oyuncuID" />
+          <ScalarProperty Name="oyuncuPara" ColumnName="oyuncuPara" />
+          <ScalarProperty Name="hapisahenedeMi" ColumnName="hapisahenedeMi" />
+          <ScalarProperty Name="ciftZarAtmaSayisi" ColumnName="ciftZarAtmaSayisi" />
+          <ScalarProperty Name="hapishaneTurSayisi" ColumnName="hapishaneTurSayisi" />
+          <ScalarProperty Name="oyundakiKareYeri" ColumnName="oyundakiKareYeri" />
+          <ScalarProperty Name="oyundanCekilme" ColumnName="oyundanCekilme" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="piyon" ColumnName="piyon" />
+          <ScalarProperty Name="renk" ColumnName="renk" />
+          <ScalarProperty Name="kodestenCikKartiSayisi" ColumnName="kodestenCikKartiSayisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OyunAlani">
+      <EntityTypeMapping TypeName="MonopolyModel.OyunAlani">
+        <MappingFragment StoreEntitySet="OyunAlani">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tapu_id" ColumnName="tapu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Piyonlar">
+      <EntityTypeMapping TypeName="MonopolyModel.Piyonlar">
+        <MappingFragment StoreEntitySet="Piyonlar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SansKartlari">
+      <EntityTypeMapping TypeName="MonopolyModel.SansKartlari">
+        <MappingFragment StoreEntitySet="SansKartlari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="metin" ColumnName="metin" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="mr_monopoly_id" ColumnName="mr_monopoly_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MonopolyModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TapularinSahipleri">
+      <EntityTypeMapping TypeName="MonopolyModel.TapularinSahipleri">
+        <MappingFragment StoreEntitySet="TapularinSahipleri">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tapu_id" ColumnName="tapu_id" />
+          <ScalarProperty Name="oyuncu_id" ColumnName="oyuncu_id" />
+          <ScalarProperty Name="evSayisi" ColumnName="evSayisi" />
+          <ScalarProperty Name="ipotekliMi" ColumnName="ipotekliMi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TapuSenetleri">
+      <EntityTypeMapping TypeName="MonopolyModel.TapuSenetleri">
+        <MappingFragment StoreEntitySet="TapuSenetleri">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tapu_ismi" ColumnName="tapu_ismi" />
+          <ScalarProperty Name="fiyati" ColumnName="fiyati" />
+          <ScalarProperty Name="arsa_kira" ColumnName="arsa_kira" />
+          <ScalarProperty Name="ev1" ColumnName="ev1" />
+          <ScalarProperty Name="ev2" ColumnName="ev2" />
+          <ScalarProperty Name="ev3" ColumnName="ev3" />
+          <ScalarProperty Name="ev4" ColumnName="ev4" />
+          <ScalarProperty Name="otel_kira" ColumnName="otel_kira" />
+          <ScalarProperty Name="ev_maliyeti" ColumnName="ev_maliyeti" />
+          <ScalarProperty Name="grup_sayisi" ColumnName="grup_sayisi" />
+          <ScalarProperty Name="renk" ColumnName="renk" />
+          <ScalarProperty Name="kartTipi" ColumnName="kartTipi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OyunKurallari">
+      <EntityTypeMapping TypeName="MonopolyModel.OyunKurallari">
+        <MappingFragment StoreEntitySet="OyunKurallari">
+          <ScalarProperty Name="initial_money" ColumnName="initial_money" />
+          <ScalarProperty Name="initial_num_tapu" ColumnName="initial_num_tapu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

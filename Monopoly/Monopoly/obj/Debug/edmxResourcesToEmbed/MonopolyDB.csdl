@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MonopolyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="KamuFonuKartlari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="metin" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tutar" Type="Int32" />
+    <Property Name="mr_monopoly_id" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="KartTipleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kart_tipi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="TapuSenetleri" Relationship="Self.FK_KartTipleri_TapuSenetleri" FromRole="KartTipleri" ToRole="TapuSenetleri" />
+  </EntityType>
+  <EntityType Name="KayitliOyun">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="oyuncu_sayisi" Type="Int32" Nullable="false" />
+    <Property Name="tarih" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="KayitliOyunDetay" Relationship="Self.FK_KayitliOyunDetay_KayitliOyun" FromRole="KayitliOyun" ToRole="KayitliOyunDetay" />
+  </EntityType>
+  <EntityType Name="KayitliOyunDetay">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="kayitliOyunID" Type="Int32" Nullable="false" />
+    <Property Name="oyuncuID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="oyuncuPara" Type="Int32" Nullable="false" />
+    <Property Name="hapisahenedeMi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ciftZarAtmaSayisi" Type="Int32" Nullable="false" />
+    <Property Name="hapishaneTurSayisi" Type="Int32" Nullable="false" />
+    <Property Name="oyundakiKareYeri" Type="Int32" Nullable="false" />
+    <Property Name="oyundanCekilme" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="piyon" Type="Int32" Nullable="false" />
+    <Property Name="renk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kodestenCikKartiSayisi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="KayitliOyun" Relationship="Self.FK_KayitliOyunDetay_KayitliOyun" FromRole="KayitliOyunDetay" ToRole="KayitliOyun" />
+  </EntityType>
+  <EntityType Name="OyunAlani">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tapu_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TapuSenetleri" Relationship="Self.FK_OyunAlani_TapuSenetleri" FromRole="OyunAlani" ToRole="TapuSenetleri" />
+  </EntityType>
+  <EntityType Name="Piyonlar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="isim" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SansKartlari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="metin" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tutar" Type="Int32" />
+    <Property Name="mr_monopoly_id" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TapularinSahipleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tapu_id" Type="Int32" Nullable="false" />
+    <Property Name="oyuncu_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="evSayisi" Type="Int32" Nullable="false" />
+    <Property Name="ipotekliMi" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="TapuSenetleri" Relationship="Self.FK_TapularinSahipleri_TapuSenetleri" FromRole="TapularinSahipleri" ToRole="TapuSenetleri" />
+  </EntityType>
+  <EntityType Name="TapuSenetleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tapu_ismi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fiyati" Type="Int32" />
+    <Property Name="arsa_kira" Type="Int32" />
+    <Property Name="ev1" Type="Int32" />
+    <Property Name="ev2" Type="Int32" />
+    <Property Name="ev3" Type="Int32" />
+    <Property Name="ev4" Type="Int32" />
+    <Property Name="otel_kira" Type="Int32" />
+    <Property Name="ev_maliyeti" Type="Int32" />
+    <Property Name="grup_sayisi" Type="Int32" />
+    <Property Name="renk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kartTipi" Type="Int32" />
+    <NavigationProperty Name="KartTipleri" Relationship="Self.FK_KartTipleri_TapuSenetleri" FromRole="TapuSenetleri" ToRole="KartTipleri" />
+    <NavigationProperty Name="OyunAlani" Relationship="Self.FK_OyunAlani_TapuSenetleri" FromRole="TapuSenetleri" ToRole="OyunAlani" />
+    <NavigationProperty Name="TapularinSahipleri" Relationship="Self.FK_TapularinSahipleri_TapuSenetleri" FromRole="TapuSenetleri" ToRole="TapularinSahipleri" />
+  </EntityType>
+  <EntityType Name="OyunKurallari">
+    <Key>
+      <PropertyRef Name="initial_money" />
+      <PropertyRef Name="initial_num_tapu" />
+    </Key>
+    <Property Name="initial_money" Type="Int32" Nullable="false" />
+    <Property Name="initial_num_tapu" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_KartTipleri_TapuSenetleri">
+    <End Role="TapuSenetleri" Type="Self.TapuSenetleri" Multiplicity="1" />
+    <End Role="KartTipleri" Type="Self.KartTipleri" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TapuSenetleri">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="KartTipleri">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KayitliOyunDetay_KayitliOyun">
+    <End Role="KayitliOyun" Type="Self.KayitliOyun" Multiplicity="1" />
+    <End Role="KayitliOyunDetay" Type="Self.KayitliOyunDetay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KayitliOyun">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="KayitliOyunDetay">
+        <PropertyRef Name="kayitliOyunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OyunAlani_TapuSenetleri">
+    <End Role="TapuSenetleri" Type="Self.TapuSenetleri" Multiplicity="1" />
+    <End Role="OyunAlani" Type="Self.OyunAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TapuSenetleri">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OyunAlani">
+        <PropertyRef Name="tapu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TapularinSahipleri_TapuSenetleri">
+    <End Role="TapuSenetleri" Type="Self.TapuSenetleri" Multiplicity="1" />
+    <End Role="TapularinSahipleri" Type="Self.TapularinSahipleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TapuSenetleri">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TapularinSahipleri">
+        <PropertyRef Name="tapu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MonopolyEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="KamuFonuKartlari" EntityType="Self.KamuFonuKartlari" />
+    <EntitySet Name="KartTipleri" EntityType="Self.KartTipleri" />
+    <EntitySet Name="KayitliOyun" EntityType="Self.KayitliOyun" />
+    <EntitySet Name="KayitliOyunDetay" EntityType="Self.KayitliOyunDetay" />
+    <EntitySet Name="OyunAlani" EntityType="Self.OyunAlani" />
+    <EntitySet Name="Piyonlar" EntityType="Self.Piyonlar" />
+    <EntitySet Name="SansKartlari" EntityType="Self.SansKartlari" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TapularinSahipleri" EntityType="Self.TapularinSahipleri" />
+    <EntitySet Name="TapuSenetleri" EntityType="Self.TapuSenetleri" />
+    <EntitySet Name="OyunKurallari" EntityType="Self.OyunKurallari" />
+    <AssociationSet Name="FK_KartTipleri_TapuSenetleri" Association="Self.FK_KartTipleri_TapuSenetleri">
+      <End Role="TapuSenetleri" EntitySet="TapuSenetleri" />
+      <End Role="KartTipleri" EntitySet="KartTipleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KayitliOyunDetay_KayitliOyun" Association="Self.FK_KayitliOyunDetay_KayitliOyun">
+      <End Role="KayitliOyun" EntitySet="KayitliOyun" />
+      <End Role="KayitliOyunDetay" EntitySet="KayitliOyunDetay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OyunAlani_TapuSenetleri" Association="Self.FK_OyunAlani_TapuSenetleri">
+      <End Role="TapuSenetleri" EntitySet="TapuSenetleri" />
+      <End Role="OyunAlani" EntitySet="OyunAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TapularinSahipleri_TapuSenetleri" Association="Self.FK_TapularinSahipleri_TapuSenetleri">
+      <End Role="TapuSenetleri" EntitySet="TapuSenetleri" />
+      <End Role="TapularinSahipleri" EntitySet="TapularinSahipleri" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
